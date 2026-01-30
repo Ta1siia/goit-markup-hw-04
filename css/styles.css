@@ -70,9 +70,12 @@ button {
 
 /* #region header */
 .page-header {
-  padding: 0px 156px;
   display: flex;
   border-bottom: 1px solid #e7e9fc;
+  box-shadow:
+    0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -106,14 +109,14 @@ button {
   padding: 24px 0;
   display: block;
   position: relative;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .active {
   color: #404bbf;
 }
 .active::after {
   position: absolute;
-  width: 48px;
+  width: 100%;
   height: 4px;
   border-radius: 4px;
   background-color: #404bbf;
@@ -141,7 +144,7 @@ button {
   letter-spacing: 0.02em;
   display: block;
   padding: 24px 0;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-link:hover,
 .contacts-link:focus,
@@ -193,7 +196,7 @@ button {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   padding: 16px 32px;
   margin: 0 auto;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-button:hover,
 .order-button:focus {
@@ -214,10 +217,12 @@ button {
 .feature-icon-container {
   height: 112px;
   background-color: #f4f4fd;
-  padding: 24px 100px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .feature-title {
   font-weight: 500;
@@ -284,22 +289,31 @@ button {
 
 .team-card-socials {
   display: flex;
-  gap: 24px;
   justify-content: center;
-  align-items: center;
+  gap: 24px;
   margin-top: 8px;
 }
-.social-icon-container {
-  background-color: #4d5ae5;
+
+.team-social-item {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  padding: 12px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.social-icon-container:hover {
+
+.social-link {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex; /* Makes the link a flex container */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
   background-color: #404bbf;
 }
+
 .social-icon {
   fill: #f4f4fd;
 }
@@ -355,16 +369,18 @@ button {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   padding: 40px 32px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-portfolio-item {
   list-style: none;
   width: 360px;
   height: 420px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .our-portfolio-item:hover {
   box-shadow:
-    1px 0 rgba(46, 47, 66, 0.16),
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
     0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 .our-portfolio-item:hover .project-card-overlay {
@@ -388,6 +404,7 @@ button {
 .footer-container {
   display: flex;
   gap: 120px;
+  align-items: baseline;
 }
 .logo-footer {
   font-family: "Raleway", sans-serif;
@@ -421,15 +438,25 @@ button {
   display: flex;
   gap: 16px;
 }
-.social-icon-container-footer {
-  background-color: #4d5ae5;
+
+.footer-social-item {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  padding: 8px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.social-icon-container-footer:hover {
+
+.footer-social-item .social-link {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-item .social-link:hover {
   background-color: #31d0aa;
 }
+
 /* #endregion footer */
